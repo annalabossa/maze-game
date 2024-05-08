@@ -1,0 +1,79 @@
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set background color */
+body {
+    background-color: #f0f0f0; /* Light gray */
+}
+
+/* Center game container */
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Style the maze container */
+#maze-container {
+    width: 400px; /* Adjust size as needed */
+    height: 400px; /* Adjust size as needed */
+    border: 2px solid #000; /* Black border */
+    background-color: #fff; /* White background */
+}
+
+/* Style maze cells */
+.cell {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    background-color: #fff; /* White background */
+    border: 1px solid #ccc; /* Light gray border */
+}
+
+/* Style maze walls */
+.wall {
+    background-color: #000; /* Black walls */
+}
+
+/* Style player */
+#player {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    background-color: #ff0000; /* Red player */
+    position: absolute;
+}
+
+/* Style exit */
+#exit {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    background-color: #00ff00; /* Green exit */
+    position: absolute;
+}
+
+/* Style game messages */
+#message {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Style buttons */
+.button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
