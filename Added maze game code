@@ -1,0 +1,41 @@
+import random
+
+class MazeGame:
+    def __init__(self, size):
+        self.size = size
+        self.maze = self.generate_maze()
+        self.player_pos = (0, 0)
+    
+    def generate_maze(self):
+        maze = [[random.choice([0, 1]) for _ in range(self.size)] for _ in range(self.size)]
+        maze[0][0] = 0  # Start position
+        maze[self.size - 1][self.size - 1] = 0  # End position
+        return maze
+    
+    def display_maze(self):
+        for row in self.maze:
+            print("".join(["X" if cell == 1 else " " for cell in row]))
+    
+    def move_player(self, direction):
+        x, y = self.player_pos
+        if direction == "up" and x > 0 and self.maze[x - 1][y] == 0:
+            self.player_pos = (x - 1, y)
+        elif direction == "down" and x < self.size - 1 and self.maze[x + 1][y] == 0:
+            self.player_pos = (x + 1, y)
+        elif direction == "left" and y > 0 and self.maze[x][y - 1] == 0:
+            self.player_pos = (x, y - 1)
+        elif direction == "right" and y < self.size - 1 and self.maze[x][y + 1] == 0:
+            self.player_pos = (x, y + 1)
+    
+    def play(self):
+        while self.player_pos != (self.size - 1, self.size - 1):
+            self.display_maze()
+            direction = input("Enter direction (up/down/left/right): ").lower()
+            self.move_player(direction)
+            print("\n")
+        print("Congratulations! You've reached the end of the maze!")
+
+if __name__ == "__main__":
+    size = int(input("Enter size of maze: "))
+    maze_game = MazeGame(size)
+    maze_game.play()
